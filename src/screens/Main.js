@@ -25,11 +25,26 @@ export const Main = () => {
         onCheck={(itemPrice, value) => handleCheckbox(itemPrice, value)}
         tableData={productData}
       />
-      <Cart
-        order={orderPrice.toFixed(2)}
-        shipping={SHIPPING}
-        total={(orderPrice + SHIPPING).toFixed(2)}
-      />
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div
+          style={{
+            width: "30%",
+          }}
+        >
+          <Cart
+            order={orderPrice.toFixed(2)}
+            shipping={SHIPPING}
+            total={(orderPrice + SHIPPING).toFixed(2)}
+          />
+        </div>
+      </div>
     </div>
   );
 };
