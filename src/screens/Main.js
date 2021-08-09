@@ -29,13 +29,14 @@ export const Main = () => {
         style={{
           width: "100%",
           display: "flex",
-          alignItems: "center",
           justifyContent: "center",
         }}
       >
         <div
           style={{
+              marginTop: '10%',
             width: "30%",
+            textAlign: 'start',
           }}
         >
           <Cart
