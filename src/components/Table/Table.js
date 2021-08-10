@@ -13,9 +13,10 @@ export const Table = (props) => {
         {props.tableData
           ? props.tableData.map((item, i) => {
               return (
-                <tr key={i}  height={30}>
+                <tr key={i} height={30}>
                   <td className="first-table-col">
                     <input
+                      id={item.name}
                       type="checkbox"
                       onChange={(e) => props.onCheck(item.price, e)}
                     ></input>
@@ -24,7 +25,7 @@ export const Table = (props) => {
                       src={item.img}
                       alt={item.name}
                     ></img>
-                    {item.name}
+                    <label for={item.name} >{item.name}</label>
                   </td>
                   <td className="last-table-col">
                     {item.price}/{item.unity}
