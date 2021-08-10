@@ -1,0 +1,23 @@
+hr {
+  background-color: #465e7a;
+}
+.cart {
+  background-color: "#F7F7F7";
+  border-radius: 10px;
+  padding: 0 10%;
+  min-width: 200px;
+}
+.title {
+  font-size: 20px;
+  margin-top: 5%;
+  font-weight: bold;
+}
+.item-price {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5%;
+}
+.bold {
+  font-weight: bold;
+}

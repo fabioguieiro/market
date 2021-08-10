@@ -1,0 +1,10 @@
+.cart-outside-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+.cart-inside-container {
+  width: 30%;
+  text-align: start;
+}

@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Table } from "../components/Table";
-import { Cart } from "../components/Cart";
+import { Table } from "../../components/Table/Table";
+import { Cart } from "../../components/Cart/Cart";
+import "./Main.css"
 
 export const Main = () => {
   useEffect(() => {
@@ -25,20 +26,8 @@ export const Main = () => {
         onCheck={(itemPrice, value) => handleCheckbox(itemPrice, value)}
         tableData={productData}
       />
-      <div
-        style={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <div
-          style={{
-              marginTop: '10%',
-            width: "30%",
-            textAlign: 'start',
-          }}
-        >
+      <div className="cart-outside-container">
+        <div className="cart-inside-container">
           <Cart
             order={orderPrice.toFixed(2)}
             shipping={SHIPPING}

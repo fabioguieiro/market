@@ -1,0 +1,34 @@
+table {
+  width: "100%";
+  font-size: 15px;
+  border-bottom: 1px solid #ccc;
+}
+.first-table-header {
+  text-align: start;
+  font-weight: 500px;
+  padding-left: 20px;
+  height: 30px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.last-table-header {
+  text-align: end;
+  font-weight: 500px;
+  padding-left: 20px;
+  height: 30px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.first-table-col {
+  width: 50%;
+  text-align: start;
+  white-space: nowrap;
+}
+.item-img {
+  width: 20px;
+  margin: 0 20px;
+}
+.last-table-col {
+  width: 50%;
+  text-align: end;
+}
