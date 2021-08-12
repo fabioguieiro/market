@@ -2,7 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Table } from "../../components/Table/Table";
 import { Cart } from "../../components/Cart/Cart";
-import "./Main.css"
+import { Loader } from "../../assets/gifs/Loader";
+import "./Main.css";
 
 export const Main = () => {
   useEffect(() => {
@@ -14,27 +15,40 @@ export const Main = () => {
   }, []);
   const [productData, setProductData] = useState([]);
   const [orderPrice, setOrderPrice] = useState(0);
+  const [showContent, setShowContent] = useState(false)
   const SHIPPING = 30.89;
   const handleCheckbox = (itemPrice, value) => {
     const sum = orderPrice + itemPrice;
     const sub = orderPrice - itemPrice;
     value.target.checked ? setOrderPrice(sum) : setOrderPrice(sub);
   };
+  const loading = () => {
+    if (productData.length > 0){
+      setTimeout(()=> {
+        setShowContent(true)
+      },2000);
+    }
+  }
+  loading();
   return (
     <div className="App">
-      <Table
-        onCheck={(itemPrice, value) => handleCheckbox(itemPrice, value)}
-        tableData={productData}
-      />
-      <div className="cart-outside-container">
-        <div className="cart-inside-container">
-          <Cart
-            order={orderPrice.toFixed(2)}
-            shipping={SHIPPING}
-            total={(orderPrice + SHIPPING).toFixed(2)}
+    {showContent  ? (
+        <>
+          <Table
+            onCheck={(itemPrice, value) => handleCheckbox(itemPrice, value)}
+            tableData={productData}
           />
-        </div>
-      </div>
+          <div className="cart-outside-container">
+            <div className="cart-inside-container">
+              <Cart
+                order={orderPrice.toFixed(2)}
+                shipping={SHIPPING}
+                total={(orderPrice + SHIPPING).toFixed(2)}
+              />
+            </div>
+          </div>
+        </>
+      ) : <div className="gif-container"><Loader/></div>}
     </div>
   );
 };
