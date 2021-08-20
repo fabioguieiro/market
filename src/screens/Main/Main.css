@@ -1,15 +1,16 @@
-.cart-outside-container {
+.cart-container {
+  margin-top: 20px;
+  text-align: start;
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 10%;
-}
-.cart-inside-container {
-  width: 30%;
-  text-align: start;
 }
 
+
 .gif-container {
-  width: 30%;
-  height: 30%;
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

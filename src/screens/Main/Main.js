@@ -15,7 +15,7 @@ export const Main = () => {
   }, []);
   const [productData, setProductData] = useState([]);
   const [orderPrice, setOrderPrice] = useState(0);
-  const [showContent, setShowContent] = useState(false)
+  const [showContent, setShowContent] = useState(false);
   const SHIPPING = 30.89;
   const handleCheckbox = (itemPrice, value) => {
     const sum = orderPrice + itemPrice;
@@ -23,32 +23,34 @@ export const Main = () => {
     value.target.checked ? setOrderPrice(sum) : setOrderPrice(sub);
   };
   const loading = () => {
-    if (productData.length > 0){
-      setTimeout(()=> {
-        setShowContent(true)
-      },2000);
+    if (productData.length > 0) {
+      setTimeout(() => {
+        setShowContent(true);
+      }, 2000);
     }
-  }
+  };
   loading();
   return (
     <div className="App">
-    {showContent  ? (
+      {showContent ? (
         <>
           <Table
             onCheck={(itemPrice, value) => handleCheckbox(itemPrice, value)}
             tableData={productData}
           />
-          <div className="cart-outside-container">
-            <div className="cart-inside-container">
-              <Cart
-                order={orderPrice.toFixed(2)}
-                shipping={SHIPPING}
-                total={(orderPrice + SHIPPING).toFixed(2)}
-              />
-            </div>
+          <div className="cart-container">
+            <Cart
+              order={orderPrice.toFixed(2)}
+              shipping={SHIPPING}
+              total={(orderPrice + SHIPPING).toFixed(2)}
+            />
           </div>
         </>
-      ) : <div className="gif-container"><Loader/></div>}
+      ) : (
+        <div className="gif-container">
+          <Loader />
+        </div>
+      )}
     </div>
   );
 };
