@@ -4,6 +4,7 @@ import { Table } from "../../components/Table/Table";
 import { Cart } from "../../components/Cart/Cart";
 import { Loader } from "../../assets/gifs/Loader";
 import "./Main.css";
+import { Navbar } from "../../components/Navbar/Navbar";
 
 export const Main = () => {
   useEffect(() => {
@@ -34,6 +35,7 @@ export const Main = () => {
     <div className="App">
       {showContent ? (
         <>
+          <Navbar/>
           <Table
             onCheck={(itemPrice, value) => handleCheckbox(itemPrice, value)}
             tableData={productData}
