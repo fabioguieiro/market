@@ -35,7 +35,7 @@ export const Main = () => {
     <div className="App">
       {showContent ? (
         <>
-          <Navbar/>
+          <Navbar />
           <Table
             onCheck={(itemPrice, value) => handleCheckbox(itemPrice, value)}
             tableData={productData}

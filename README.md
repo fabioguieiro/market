@@ -1,17 +1,20 @@
-### Como Executar 
+### Como Executar
+
 É necessário que a máquina que executará este código conte com algum gerenciador de pacotes como o [npm](https://www.npmjs.com/).
 
-Com o gerenciador de pacotes instalado, clone este repositório, abra o terminal do sistema operacional na pasta onde o projeto foi clonado e execute um dos seguintes comandos (dependendo do gerenciador de pacote que será utilizado): 
+Com o gerenciador de pacotes instalado, clone este repositório, abra o terminal do sistema operacional na pasta onde o projeto foi clonado e execute um dos seguintes comandos (dependendo do gerenciador de pacote que será utilizado):
 
 ##### npm
+
 `$ npm install`
 
-Este comando irá instalar todas as dependencias necessárias para rodar o projeto. Em seguida, execute um dos seguintes comandos, também dependendo do gerenciador de pacotes escolhido: 
+Este comando irá instalar todas as dependencias necessárias para rodar o projeto. Em seguida, execute um dos seguintes comandos, também dependendo do gerenciador de pacotes escolhido:
 
 ##### npm
+
 `$ npm start`
 
-O resultado desse comando será algo parecido com isso: 
+O resultado desse comando será algo parecido com isso:
 
 ![](https://i.imgur.com/BMGtiKj.png)
 
