@@ -1,19 +1,20 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { Table } from "../../components/Table/Table";
-import { Cart } from "../../components/Cart/Cart";
-import { Loader } from "../../assets/gifs/Loader";
-import "./Main.css";
-import { Navbar } from "../../components/Navbar/Navbar";
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { Table } from '../../components/Table/Table';
+import { Cart } from '../../components/Cart/Cart';
+import { Loader } from '../../assets/gifs/Loader';
+import './Main.css';
+import { Navbar } from '../../components/Navbar/Navbar';
 
 export const Main = () => {
   useEffect(() => {
     axios
-      .get("https://market-b9812-default-rtdb.firebaseio.com/products.json")
+      .get('https://market-b9812-default-rtdb.firebaseio.com/products.json')
       .then((response) => {
         setProductData(response.data);
       });
   }, []);
+
   const [productData, setProductData] = useState([]);
   const [orderPrice, setOrderPrice] = useState(0);
   const [showContent, setShowContent] = useState(false);
@@ -40,7 +41,7 @@ export const Main = () => {
             onCheck={(itemPrice, value) => handleCheckbox(itemPrice, value)}
             tableData={productData}
           />
-          <div className="cart-container">
+          <div className="cart-container" style={{ background: 'white' }}>
             <Cart
               order={orderPrice.toFixed(2)}
               shipping={SHIPPING}

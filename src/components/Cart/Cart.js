@@ -1,4 +1,4 @@
-import "./Cart.css";
+import './Cart.css';
 export const Cart = (props) => {
   return (
     <div className="cart">

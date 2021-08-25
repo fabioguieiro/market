@@ -1,4 +1,4 @@
-import "./Table.css";
+import './Table.css';
 
 export const Table = (props) => {
   return (
@@ -25,7 +25,7 @@ export const Table = (props) => {
                       src={item.img}
                       alt={item.name}
                     ></img>
-                    <label for={item.name}>{item.name}</label>
+                    <label htmlFor={item.name}>{item.name}</label>
                   </td>
                   <td className="last-table-col">
                     € {item.price}/{item.unity}

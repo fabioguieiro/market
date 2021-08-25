@@ -1,5 +1,5 @@
-import "./Navbar.css";
-import { Logo } from "../../assets/imgs/Logo";
+import './Navbar.css';
+import { Logo } from '../../assets/imgs/Logo';
 export const Navbar = () => {
   return (
     <div className="navbar">
