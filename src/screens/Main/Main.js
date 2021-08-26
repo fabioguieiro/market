@@ -5,6 +5,9 @@ import { Cart } from '../../components/Cart/Cart';
 import { Loader } from '../../assets/gifs/Loader';
 import './Main.css';
 import { Navbar } from '../../components/Navbar/Navbar';
+import { sum } from '../../utils/sum/sum';
+import { sub } from '../../utils/sub/sub';
+import { parseNegativeZero } from '../../utils/parseNegativeZero/parseNegativeZero';
 
 export const Main = () => {
   useEffect(() => {
@@ -20,9 +23,9 @@ export const Main = () => {
   const [showContent, setShowContent] = useState(false);
   const SHIPPING = 30.89;
   const handleCheckbox = (itemPrice, value) => {
-    const sum = orderPrice + itemPrice;
-    const sub = orderPrice - itemPrice;
-    value.target.checked ? setOrderPrice(sum) : setOrderPrice(sub);
+    const itemsSum = sum(orderPrice, itemPrice);
+    const itensSub = sub(orderPrice, itemPrice);
+    value.target.checked ? setOrderPrice(itemsSum) : setOrderPrice(itensSub);
   };
   const loading = () => {
     if (productData.length > 0) {
@@ -45,7 +48,11 @@ export const Main = () => {
             <Cart
               order={orderPrice.toFixed(2)}
               shipping={SHIPPING}
-              total={(orderPrice + SHIPPING).toFixed(2)}
+              total={
+                sum(orderPrice, SHIPPING).toFixed(2) === '-0'
+                  ? parseNegativeZero((orderPrice + SHIPPING).toFixed(2))
+                  : (orderPrice + SHIPPING).toFixed(2)
+              }
             />
           </div>
         </>

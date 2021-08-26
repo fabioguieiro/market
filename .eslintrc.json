@@ -1,9 +1,19 @@
 {
+  "settings": {
+    "jest": {
+      "version": 26
+    }
+  },
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "jest/globals": true
   },
-  "extends": ["plugin:prettier/recommended", "eslint:recommended", "plugin:react/recommended"],
+  "extends": [
+    "plugin:prettier/recommended",
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -11,13 +21,18 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react"],
+  "plugins": ["react", "jest"],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/react-in-jsx-scope": "off",
-    "no-console": "error",
+    "no-console": 1,
     "react/prop-types": "off",
     "react-native/no-inline-styles": 0,
-    "react/no-deprecated": "error"
+    "react/no-deprecated": "error",
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error"
   }
 }

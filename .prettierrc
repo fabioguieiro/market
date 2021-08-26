@@ -1,4 +1,11 @@
 {
     "singleQuote": true,
-    "bracketSpacing": true
+    "bracketSpacing": true,
+    "endOfLine": "auto",
+    "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "auto"
+        }
+      ]
 }
